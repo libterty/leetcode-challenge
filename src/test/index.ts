@@ -11,7 +11,7 @@ const test = function (group: Group[] | Group): string {
     } else {
         let i: number = 0;
         while (i < mapping.length) {
-            query += `$objectId=${group[i].objectId}`;
+            query += `&objectId=${group[i].objectId}`;
             i++;
         }
     }
