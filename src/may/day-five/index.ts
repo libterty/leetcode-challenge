@@ -7,7 +7,7 @@ interface MapObject {
     [key: string]: number;
 }
 
-var firstUniqChar = function (s: string): number {
+export const firstUniqChar = function (s: string): number {
     const stringToArr: string[] = s.split('');
 
     const map: MapObject = stringToArr.reduce((allChar: MapObject, char: string) => {
