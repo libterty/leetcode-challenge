@@ -1,35 +1,38 @@
 {
-  "name": "code_challenge",
-  "version": "1.0.1",
-  "description": "leetCode Challenge",
-  "main": "./src/index.ts",
-  "scripts": {
-    "build": "rm -rf ./dist && tsc -p .",
-    "prerestart": "tsc --watch",
-    "start": "ts-node src/index.ts",
-    "start:dev": "nodemon src/index.ts",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "eslint '{src,apps,libs,test}/**/*.ts' --fix"
-  },
-  "keywords": [
-    "leetCode",
-    "Challenge"
-  ],
-  "author": "11",
-  "license": "ISC",
-  "dependencies": {
-    "ts-node": "6.2.0",
-    "typescript": "3.1.1"
-  },
-  "devDependencies": {
-    "@types/node": "^13.7.6",
-    "@typescript-eslint/eslint-plugin": "^2.21.0",
-    "@typescript-eslint/parser": "^2.21.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-import": "^2.20.1",
-    "nodemon": "^2.0.2",
-    "prettier": "^2.0.5",
-    "tsconfig-paths": "^3.9.0"
-  }
+    "name": "code_challenge",
+    "version": "1.0.1",
+    "description": "leetCode Challenge",
+    "main": "./src/index.ts",
+    "scripts": {
+        "build": "rm -rf ./dist && tsc -p .",
+        "prerestart": "tsc --watch",
+        "start": "ts-node src/index.ts",
+        "start:dev": "nodemon src/index.ts",
+        "format": "prettier --write \"src/**/*.ts\"",
+        "lint": "eslint '{src,apps,libs,test}/**/*.ts' --fix",
+        "local": "ts-node src/test/concurrency.ts"
+    },
+    "keywords": [
+        "leetCode",
+        "Challenge"
+    ],
+    "author": "11",
+    "license": "ISC",
+    "dependencies": {
+        "@types/node-fetch": "^2.5.7",
+        "node-fetch": "^2.6.0",
+        "ts-node": "6.2.0",
+        "typescript": "3.1.1"
+    },
+    "devDependencies": {
+        "@types/node": "^13.7.6",
+        "@typescript-eslint/eslint-plugin": "^2.21.0",
+        "@typescript-eslint/parser": "^2.21.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-plugin-import": "^2.20.1",
+        "nodemon": "^2.0.2",
+        "prettier": "^2.0.5",
+        "tsconfig-paths": "^3.9.0"
+    }
 }
