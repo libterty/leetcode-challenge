@@ -14,20 +14,47 @@ let concurrency = 5;
 //         }
 //     });
 
-setTimeout(async () => {
-    for (let i: number = 0; i < images.length; i += 5) {
-        let _images = images.slice(i, i + 5);
+const requestOptions = {
+    sendByOne: (images) => {
+        setTimeout(async () => {
+            for (let i: number = 0; i < images.length; i += 1) {
+                let _images = images.slice(i, i + 1);
 
-        console.log('batch image start: ', i);
+                console.log('batch image start: ', i);
 
-        await Promise.all(
-            _images.map(async (value, index, array) => {
-                console.log('image start: ', index + i);
-                await fetch(value).then((res) => res.text());
-                console.log('image end: ', index + i);
-            }),
-        );
+                await Promise.all(
+                    _images.map(async (value, index, array) => {
+                        console.log('image start: ', index + i);
+                        await fetch(value).then((res) => res.text());
+                        console.log('image end: ', index + i);
+                    }),
+                );
 
-        console.log('batch image end: ', i);
-    }
-}, 0);
+                console.log('batch image end: ', i);
+            }
+        }, 0);
+    },
+
+    sendByFive: (images) => {
+        setTimeout(async () => {
+            for (let i: number = 0; i < images.length; i += 5) {
+                let _images = images.slice(i, i + 5);
+
+                console.log('batch image start: ', i);
+
+                await Promise.all(
+                    _images.map(async (value, index, array) => {
+                        console.log('image start: ', index + i);
+                        await fetch(value).then((res) => res.text());
+                        console.log('image end: ', index + i);
+                    }),
+                );
+
+                console.log('batch image end: ', i);
+            }
+        }, 0);
+    },
+};
+
+requestOptions.sendByOne(images);
+requestOptions.sendByFive(images);
