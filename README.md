@@ -9,3 +9,4 @@
     -   Day 6: [Majority Element](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-six/index.ts) :relaxed:
     -   Day 7: [Cousins in Binary Tree](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-seven/index.ts) :hushed:
     -   Day 8: [check Straight Line](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-eight/index.ts) :grin:
+    -   Day 9: [Is Perfect Square](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-nine/index.ts) :alien:
