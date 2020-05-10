@@ -11,8 +11,10 @@
     ],
     "outDir": "dist",
     "declaration": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "resolveJsonModule": true
   },
+  "include": ["src", "desc.d.ts"],
   "exclude": [
     ".git",
     ".cache",

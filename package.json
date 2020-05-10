@@ -19,8 +19,13 @@
     "author": "11",
     "license": "ISC",
     "dependencies": {
+        "@types/fs-extra": "^8.1.0",
         "@types/node-fetch": "^2.5.7",
+        "fs": "0.0.1-security",
+        "fs-extra": "^9.0.0",
+        "json2xls": "^0.1.2",
         "node-fetch": "^2.6.0",
+        "p3x-json2xls-worker-thread": "^2020.4.164",
         "ts-node": "6.2.0",
         "typescript": "3.1.1"
     },
