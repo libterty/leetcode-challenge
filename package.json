@@ -10,7 +10,7 @@
         "start:dev": "nodemon src/index.ts",
         "format": "prettier --write \"src/**/*.ts\"",
         "lint": "eslint '{src,apps,libs,test}/**/*.ts' --fix",
-        "local": "ts-node src/test/concurrency.ts"
+        "local": "ts-node src/test/converter.ts"
     },
     "keywords": [
         "leetCode",
@@ -21,21 +21,25 @@
     "dependencies": {
         "@types/fs-extra": "^8.1.0",
         "@types/node-fetch": "^2.5.7",
+        "exceljs": "^3.9.0",
         "fs": "0.0.1-security",
         "fs-extra": "^9.0.0",
         "json2xls": "^0.1.2",
         "node-fetch": "^2.6.0",
         "p3x-json2xls-worker-thread": "^2020.4.164",
+        "server-service-edge": "^1.0.19",
         "ts-node": "6.2.0",
         "typescript": "3.1.1"
     },
     "devDependencies": {
+        "@types/nanoid": "^2.1.0",
         "@types/node": "^13.7.6",
         "@typescript-eslint/eslint-plugin": "^2.21.0",
         "@typescript-eslint/parser": "^2.21.0",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.10.0",
         "eslint-plugin-import": "^2.20.1",
+        "nanoid": "^3.1.6",
         "nodemon": "^2.0.2",
         "prettier": "^2.0.5",
         "tsconfig-paths": "^3.9.0"

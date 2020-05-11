@@ -25,5 +25,25 @@ const arr = test([
 ]);
 const obj = test({ objectId: 1, name: 'test' });
 
-console.log('_arr', arr);
-console.log('_obj', obj);
+const check = (IPerson) => {
+    const mappings: string[] = Object.keys(IPerson);
+    let query: string = '';
+    if (mappings[0] === 'personId') {
+        query = `&objectId=${IPerson[mappings[0]]}`;
+    } else {
+        let i: number = 0;
+        while (i < mappings.length) {
+            query += `&objectId=${IPerson[i].personId}`;
+            i++;
+        }
+    }
+    console.log('query: ', query);
+};
+
+check({ personId: '1231', personInfo: { name: 'resr' } });
+check([
+    { personId: '1231', personInfo: { name: 'resr' } },
+    { personId: '4563', personInfo: { name: 'resr' } },
+]);
+
+console.log('sdf', new Date('Tue May 05 2020 17:06:43 GMT+0800'));

@@ -1,24 +1,25 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2017",
-    "baseUrl": "./",
-    "noImplicitAny": false,
-    "strictPropertyInitialization": false,
-    "sourceMap": false,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "outDir": "dist",
-    "declaration": true,
-    "experimentalDecorators": true,
-    "resolveJsonModule": true
-  },
-  "include": ["src", "desc.d.ts"],
-  "exclude": [
-    ".git",
-    ".cache",
-    "node_modules",
-    "logs"
-  ]
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2017",
+        "baseUrl": "./",
+        "noImplicitAny": false,
+        "strictPropertyInitialization": false,
+        "sourceMap": false,
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "outDir": "dist",
+        "declaration": true,
+        "experimentalDecorators": true,
+        "resolveJsonModule": true,
+        "lib": ["es2017", "ES2017.Object"]
+    },
+    "include": ["src", "desc.d.ts"],
+    "exclude": [
+        ".git",
+        ".cache",
+        "node_modules",
+        "logs"
+    ]
 }

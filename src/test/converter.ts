@@ -1,40 +1,40 @@
 const json2xls = require('json2xls');
 const fs = require('fs-extra');
-const data: any[] = [
-    {
-        name: 'test1',
-        imageSrc: 'file/file/test1.jpg',
-        groups: ['groups1', 'groups2'],
-    },
-    {
-        name: 'test2',
-        imageSrc: 'file/file/test2.jpg',
-        groups: ['groups5', 'groups2'],
-    },
-    {
-        name: 'test3',
-        imageSrc: 'file/file/test3.jpg',
-        groups: ['groups4', 'groups2'],
-    },
-    {
-        name: 'test4',
-        imageSrc: 'file/file/test4.jpg',
-        groups: ['groups3', 'groups2'],
-    },
-    {
-        name: 'test5',
-        imageSrc: 'file/file/test5.jpg',
-        groups: ['groups1', 'groups2'],
-    },
-];
+const workerData: IResult[] = require('./workcard.json').Data;
+const testData = require('./test.json');
 
-const cTest = async (): Promise<void> => {
+interface IResult {
+    [key: string]: any;
+}
+
+const transformData = (data) => {
+    let mappingArr: IResult[] = [];
+
+    data.forEach((resultObj) => {
+        let mappingObj: IResult = {};
+        for (let item in resultObj) {
+            if (Array.isArray(resultObj[item])) {
+                for (let i = 0; i < resultObj[item].length; i++) {
+                    mappingObj[`${item}_${i}`] = resultObj[item][i];
+                }
+            } else {
+                mappingObj[item] = resultObj[item];
+            }
+        }
+
+        mappingArr.push(mappingObj);
+    });
+
+    return mappingArr;
+};
+
+const cTest = async (fileName: string): Promise<void> => {
     try {
-        let xls = json2xls(data);
-        await fs.writeFileSync('new.xlsx', xls, 'binary');
+        let xls = json2xls(transformData(testData));
+        await fs.writeFileSync(`${fileName}.xlsx`, xls, 'binary');
     } catch (error) {
         throw new Error(error);
     }
 };
 
-cTest();
+cTest('new3');
