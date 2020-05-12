@@ -12,3 +12,4 @@
     -   Day 9: [Is Perfect Square](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-nine/index.ts) :alien:
     -   Day 10: [Find Town Judge](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-ten/index.ts) :poop:
     -   Day 11: [Flood Fill](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-eleven/index.ts) :raising_hand:
+    -   Day 12: [Single Element in a Sorted Array](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-twelve/index.ts) :hear_no_evil:
