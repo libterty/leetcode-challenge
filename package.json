@@ -10,7 +10,7 @@
         "start:dev": "nodemon src/index.ts",
         "format": "prettier --write \"src/**/*.ts\"",
         "lint": "eslint '{src,apps,libs,test}/**/*.ts' --fix",
-        "local": "ts-node src/test/converter.ts"
+        "local": "ts-node src/test/index.ts"
     },
     "keywords": [
         "leetCode",

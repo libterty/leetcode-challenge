@@ -40,10 +40,32 @@ const check = (IPerson) => {
     console.log('query: ', query);
 };
 
-check({ personId: '1231', personInfo: { name: 'resr' } });
-check([
-    { personId: '1231', personInfo: { name: 'resr' } },
-    { personId: '4563', personInfo: { name: 'resr' } },
-]);
+const map: Map<string, number> = new Map(); // Use O(1) time
 
-console.log('sdf', new Date('Tue May 05 2020 17:06:43 GMT+0800'));
+let i = 0;
+
+let startTimeI = new Date().getUTCMilliseconds();
+while (i < 10100) {
+    map.set(`key${i}`, i);
+    i++;
+}
+let out = Array.from(map).reduce((obj, [key, val]) => {
+    // Map comes with O(n) + Matrix reduce with O(n^2) + Map Write O(1) -->　O(n + n^2 + 1)
+    obj[key] = val;
+    return obj;
+}, {});
+let endTimeI = new Date().getUTCMilliseconds();
+
+const map2: object = {}; // Use O(n) time
+
+let j = 0;
+
+let startTimeJ = new Date().getUTCMilliseconds();
+while (j < 10100) {
+    map2[`key${j}`] = j;
+    j++;
+}
+let endTimeJ = new Date().getUTCMilliseconds();
+
+console.log('map0 time', `${endTimeI - startTimeI}ms`);
+console.log('map1 time', `${endTimeJ - startTimeJ}ms`);
