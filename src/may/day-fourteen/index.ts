@@ -1,28 +1,15 @@
-// Trie trie = new Trie();
-
-// trie.insert("apple");
-// trie.search("apple");   // returns true
-// trie.search("app");     // returns false
-// trie.startsWith("app"); // returns true
-// trie.insert("app");
-// trie.search("app");     // returns true
-
 class TrieNode {
-    private isEnd: boolean = false;
-    private freq: number = 0;
-    private child: object = {};
+    public root: object = {};
     public constructor() {
-        this.isEnd = false;
-        this.freq = 0;
-        this.child = {};
+        this.root;
     }
 }
 
 class Trie extends TrieNode {
-    public root: TrieNode = undefined;
-    constructor(trie) {
+    public root = undefined;
+    public constructor() {
         super();
-        this.root = new TrieNode();
+        this.root = new TrieNode().root;
     }
 
     /**
@@ -31,21 +18,11 @@ class Trie extends TrieNode {
      * @return {void}
      */
     public insert(word: string): void {
-        if (word.length) return;
-        let letter: TrieNode = new TrieNode();
-        let curNode: TrieNode = new TrieNode();
-        let i: number = 0;
-
-        while (i < word.length) {
-            letter = word[i];
-            if (!curNode.child.hadOwnProperty(letter)) {
-                curNode.child[letter] = new TrieNode();
-            }
-            curNode = curNode.child[letter];
+        let node = this.root;
+        for (let i = 0; i < word.length; i++) {
+            node = node[word[i]] = node[word[i]] || {};
+            if (i === word.length - 1) node.isTerminal = true;
         }
-
-        curNode.isEnd = true;
-        curNode.freq += 1;
     }
 
     /**
@@ -53,26 +30,35 @@ class Trie extends TrieNode {
      * @param {string} word
      * @return {boolean}
      */
-    public search(word: string): boolean {}
+    public search(word: string, isPrefix?: boolean): boolean {
+        let node = this.root;
+        for (let c of word) {
+            if (!node[c]) return false;
+            node = node[c];
+        }
+        return isPrefix || !!node.isTerminal;
+    }
 
     /**
      * Returns if there is any word in the trie that starts with the given prefix.
      * @param {string} prefix
      * @return {boolean}
      */
-    public startsWith(prefix) {}
-
-    public prefix(word) {
-        let letter: TrieNode = new TrieNode();
-        let curNode: TrieNode = new TrieNode();
-        let i: number = 0;
-
-        while (i < word.length) {
-            letter = word[i];
-            if (!curNode.child.hasOwnProperty(letter)) {
-                return null;
-                curNode = curNode.child[letter];
-            }
-        }
+    public startsWith(prefix: string): boolean {
+        return this.search(prefix, true);
     }
 }
+
+const trie = new Trie();
+
+trie.insert('apple');
+const a = trie.search('apple'); // returns true
+const b = trie.search('app'); // returns false
+const c = trie.startsWith('app'); // returns true
+trie.insert('app');
+const d = trie.search('app'); // returns true
+
+console.log('a', a);
+console.log('b', b);
+console.log('c', c);
+console.log('d', d);
