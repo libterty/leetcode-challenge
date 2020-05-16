@@ -16,3 +16,4 @@
     -   Day 13: [Remove K Digits](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-thirteen/index.ts) :tongue:
     -   Day 14: [Implement Trie (Prefix Tree)](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-thirteen/index.ts) :pig_nose:
     -   Day 15: [Maximum Sum Circular Subarray](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-fifteen/index.ts) :whale:
+    -   Day 16: [Odd Even Linked List](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-sixteen/index.ts) :whale:
