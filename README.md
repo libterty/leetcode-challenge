@@ -20,3 +20,4 @@
     -   Day 17: [Find All Anagrams in a String Solution](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-seventeen/index.ts) :hear_no_evil:
     -   Day 18: [Permutation in String](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-eighteen/index.ts) :pig_nose:
     -   Day 19: [Online Stock Span](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-nighteen/index.ts) :pig_nose:
+    -   Day 20: [KTH smallest BST](https://github.com/libterty/leetcode-challenge/blob/master/src/may/day-twenty/index.ts) :pig_nose:
